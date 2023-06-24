@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore the captivating world of NBA players' cologne selections. Discover the signature scents and preferred fragrances of basketball icons, unveiling a captivating blend of style, elegance, and personal expression. Find inspiration for your own cologne journey as you delve into the intriguing world where sports and fragrances converge">
     <title>Signature Scents of NBA Players: Unveiling the Cologne Choices of Basketball Icons</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+
 </head>
 <body>
     <h1 class="top-head">Welcome to NBA Player Colognes: Discover the Signature Scents of Your Favorite Players</h1>
@@ -63,7 +68,7 @@
     </div>
 
     <div class="navbar">
-        <div style="padding: 40px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: medium;">
+        <div style="padding: 40px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;">
             <p>This website uses affiliate links, so if you decide to buy something you will support our work :)</p>
             <p>for inquiries</p>
         <p>sportingessentials11@gmail.com</p>
@@ -79,102 +84,3 @@
 </body>
 </html>
 
-
-<style>
-    .navbar{
-        margin-top: 40px;
-        background-color: antiquewhite;
-        bottom: 0;
-        height: 350px;
-        border-radius: 5px;
-        
-    }
-    .top-head{
-        font-size: 500%;
-        
-        
-    }
-    .table-of-contents{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 20px;
-        color: rgb(156, 16, 16);
-
-        
-    }
-    html{
-        scroll-behavior: smooth;
-    }
-    .question{
-        font-size: 25px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
-    .name{
-        color: black;
-        font-size: 120%;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-    .header{
-        font-size: 250%;
-        color: black;
-        scroll-behavior: smooth;
-        border: 2px solid black;
-            padding: 10px;
-    }
-    .description{
-        font-size: 110%;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      
-    }
-    .images{
-        height: 340px;
-    }
-
-    .grid-photo{
-        display: flex;
-    }
-    body{
-        margin-left: 25%;
-        margin-right: 25%;
-        
-    
-       
-    }
-    img{
-   
-        height: 100%;
-    }
-
-    @media only screen and (max-width: 480px) {
-        body{
-        margin-left: 0;
-        margin-right: 0;
-    } 
-    .top-head{
-        font-size: 300%;
-        
-        
-    }
-    .header{
-        font-size: 150%;
-        color: black;
-        scroll-behavior: smooth;
-        border: 2px solid black;
-        display: inline-block;
-        padding: 10px;
-        margin-right: 15px;
-            
-    }
-    .images{
-        height: 220px;
-    }
-    .navbar{
-        background-color: antiquewhite;
-        bottom: 0;
-        height: 400px;
-        
-    }
-    }
- 
-
-
-</style>

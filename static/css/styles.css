@@ -1,0 +1,96 @@
+.navbar{
+    margin-top: 40px;
+    background-color: antiquewhite;
+    bottom: 0;
+    height: 350px;
+    border-radius: 5px;
+    
+}
+.top-head{
+    font-size: 500%;
+    
+    
+}
+.table-of-contents{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: rgb(156, 16, 16);
+
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+.question{
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.name{
+    color: black;
+    font-size: 120%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.header{
+    font-size: 250%;
+    color: black;
+    scroll-behavior: smooth;
+    border: 2px solid black;
+        padding: 10px;
+}
+.description{
+    font-size: 110%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.images{
+    height: 340px;
+}
+
+.grid-photo{
+    display: flex;
+}
+body{
+    margin-left: 25%;
+    margin-right: 25%;
+    
+
+   
+}
+img{
+
+    height: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+    body{
+    margin-left: 0;
+    margin-right: 0;
+} 
+.top-head{
+    font-size: 300%;
+    
+    
+}
+.header{
+    font-size: 150%;
+    color: black;
+    scroll-behavior: smooth;
+    border: 2px solid black;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 15px;
+        
+}
+.images{
+    height: 220px;
+}
+.navbar{
+    background-color: antiquewhite;
+    bottom: 0;
+    height: 400px;
+    
+}
+}
+
+
+
