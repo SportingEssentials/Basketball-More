@@ -1,0 +1,136 @@
+.ad{
+    position: absolute;
+    top: 190%;
+    font-size: 100px;
+    left: 8%;
+    
+    width: 10%;
+    
+}
+.ad2{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    font-size: 100px;  
+}
+.ad3{
+    position: absolute;
+    top: 300%;
+    left: 85%;
+    font-size: 100px;  
+}
+.flex{
+    display: flex;
+    
+    
+}
+
+.img2{
+    height: 350px;
+    
+}
+img{
+    height: 100%;
+    
+}
+.head{
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 50px;
+}
+.margin{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .phone-pad{
+margin-left: 7px;
+margin-right: 7px;
+}
+.margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+    
+.flex{
+        display: block;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    
+    .img2{
+        max-width: 100%;
+        height: auto;
+        
+}
+.ad{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    text-align: center;
+    
+}
+.ad2{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+    text-align: center;
+}
+.ad3{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+    text-align: center;
+}
+}
+@media only screen and (max-width: 480px) {
+    .phone-pad{
+margin-left: 7px;
+margin-right: 7px;
+}
+    .ad{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    
+}
+.ad2{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+}
+.ad3{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+}
+    .flex{
+        display: block;
+    }
+    
+    .img2{
+        max-width: 100%;
+        height: auto;
+}
+img{
+    
+    
+}
+    
+    .margin{
+    margin-left: 5px;
+    margin-right: 5px;
+} 
+}

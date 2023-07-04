@@ -1,0 +1,121 @@
+{% include 'navbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+
+
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 Basketball Essentials: Must-Have Gear and Accessories for Basketball Players</title>
+  <meta name="description" content="Discover the top 10 basketball essentials for players of all levels. Explore high-quality gear and accessories, including Nike Elite Crew socks, WILSON NBA Authentic Series Basketballs, Kyrie Low 5 basketball shoes, resistance bands, massage guns, foam rollers, and more. Elevate your game with these must-have products that enhance performance, provide comfort, and improve recovery. Find the best deals, brands, and materials for your basketball needs. Get ready to dominate the court with the ultimate collection of basketball essentials.">
+  <link rel="stylesheet" href="{% static 'css/essentials.css' %}">
+
+</head>
+
+<body>
+    <div class="margin">
+        <h1 class="head">The Top 10 Basketball Essentials You Need to Succeed: From Training Aids and Recovery to Injury Prevention</h1>
+        <p style="padding-top: 10px;"></p>
+        <p style="font-weight: bold; color: rgb(77, 155, 219); font-family: 'Courier New', Courier, monospace; font-size: 120%;">constantly updated to provide the best prices and products!</p>
+        <div class="phone-pad">
+          <p class="des1">Whether you're a beginner or a seasoned pro, having the right gear and equipment is essential for playing basketball at your best. From footwear to training aids, there are a variety of items that can help improve your game and keep you safe on the court. In this guide, we'll highlight the top 10 basketball essentials you need to succeed.</p>
+      
+          <h4>Coupons and Discounts to Help You Save on the Best Gear</h4>
+          <p class="des collapsed">Our website offers a range of coupons and limited time sales to help you save money on your favorite basketball essentials, including shoes, balls, clothing, and training aids. You'll find everything you need to elevate your game and achieve your basketball goals, from the latest performance-enhancing technologies to tried-and-true classics.</p>
+      
+          <h4>Choose Products that Fit Your Style and Performance Needs</h4>
+          <p class="des">In addition to providing you with great deals and discounts, we also offer valuable information on the materials, strengths, and benefits of each essential, so you can choose the products that are right for you. Our comprehensive product descriptions and customer reviews give you an inside look at each item's features and performance, helping you make the most informed purchase decisions possible.</p>
+      
+      
+        {% for essential in basketball_essentials %}
+      
+          <a href="{{ essential.url }}" class="name-pro">{{ essential.name }}</a>
+          <div class="essent-des">
+            <p >{{ essential.description|linebreaks|safe }}</p>
+          </div>
+          <img class="essen-img" src="{{ essential.image.url }}" alt="{{ essential.name }}">
+      
+          <div class="essen-info">
+            <p style="color: rgb(58, 197, 53); font-size: 20px;">{{ essential.sale }}</p>
+      
+            {% if essential.coupons %}
+              <p style="color: rgb(92, 92, 92);">Promo code: {{ essential.coupons }}</p>
+            {% endif %}
+      
+            <p> <span style="font-weight: 600; ">Benefits:</span>  {{ essential.benefits }}</p>
+      
+            <p> <span style="font-weight: 600; ">Brand:</span>  {{ essential.brand }}</p>
+            <p> <span style="font-weight: 600; ">Material:</span>  {{ essential.material }}</p>
+            <p>{{ essential.num_stars }}</p>
+            <p> <span style="font-weight: 600; ">Type:</span> {{ essential.genre }}</p>
+          </div>
+      
+          {% if essential.comparison.exists %}
+              <p style="width: 100%; height: 2px; background-color: rgb(184, 182, 182);"></p>
+      
+              <p style="font-size: 140%; font-family: Georgia, 'Times New Roman', Times, serif; ">Our other top option(s):</p>
+      
+      
+              <div style="display: flex; gap: 5%; ">
+                {% for comparison in essential.comparison.all %}
+                  <div class="comp-card">
+                    <div>
+                      <div style="padding: 5px; height: 110px; background-color: rgb(243, 242, 242); border-radius: 8px; position: relative;">
+                        <a style="font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: rgb(0, 0, 0); font-size: 90%;" href="{{ comparison.comp_url }}">{{ comparison.comp_name }}</a>
+      
+                        <p style="font-family: Arial, Helvetica, sans-serif; font-size: 110%; position: absolute; bottom: 0;"> {{ comparison.comp_price_index }} </p>
+                      </div>
+      
+                      <img style="width: 100%; padding-top: 8px;" src="{{ comparison.comp_img.url }}" alt="">
+                    </div>
+      
+                  </div>
+                {% endfor %}
+              </div>
+          {% endif %}
+          {% if forloop.counter == 1 %}
+            
+        <!-- Code for Ad 1 -->
+            {% elif forloop.counter == 2 %}
+            
+        <!-- Code for Ad 2 -->
+            {% elif forloop.counter == 3 %}
+              <div class="ad">
+                <p>ad 1</p>
+              </div>
+            
+            {% elif forloop.counter == 4 %}
+
+            {% elif forloop.counter == 5 %}
+           
+            {% elif forloop.counter == 6 %}
+              <div class="ad2">
+                <p>ad 2</p>
+              </div>
+            {% elif forloop.counter == 7 %}
+            {% elif forloop.counter == 8 %}
+            {% elif forloop.counter == 9 %}
+              <div class="ad3">
+                <p>ad 3</p>
+              </div>
+            {% elif forloop.counter == 3 %}
+           
+        <!-- Code for Ad 3 -->
+            {% endif %}
+        {% endfor %}
+        </div>
+      
+    </div>
+ 
+  
+    {% include 'footer.html' %}
+</body>
+</html>
+
+
+

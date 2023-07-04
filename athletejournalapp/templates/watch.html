@@ -1,0 +1,67 @@
+{% include 'navbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the impressive watch collection of NBA players and discover the luxurious timepieces adorning their wrists. From elegant classics to bold statement pieces, delve into the world of basketball and horology. Get insights into the watches worn by your favorite basketball stars and stay up-to-date with the latest trends in timekeeping. Enhance your style and elevate your knowledge of watches with our comprehensive guide. Dive into the world where sports and sophistication intertwine.">
+    <title>NBA Players' Watch Collection: Discover the Top 7 Stylish Timepieces Worn by Basketball Stars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Modak&family=Oswald:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/watch.css' %}">
+
+</head>
+<body>
+    <div class="margin">
+        
+        <h1 class="head">What Watch is Your Favorate NBA Player Wearing? Find out on This Article, where we Explore the Top 7 Most Stylish Timepieces in The League</h1>
+        
+        <div class="phone-pad">
+            {% for watch in watches %}
+            <h3 style="padding-bottom: 20px; padding-top: 20px;">{{ watch.Name_player }} With {{ watch.name_watch }}</h3>
+
+
+            <div class="flex">
+                <img class="img2" src="{{ watch.img_watch.url }}" alt="">
+                <img class="img2" src="{{ watch.img_player.url }}" alt="">
+            </div>
+
+            <p class="desc">{{ watch.description|linebreaks|safe }}</p>
+            
+            {% if forloop.counter == 1 %}
+            <div class="ad">
+                <p>ad 1</p>
+            </div>
+        <!-- Code for Ad 1 -->
+            {% elif forloop.counter == 2 %}
+            
+        <!-- Code for Ad 2 -->
+            {% elif forloop.counter == 3 %}
+            <div class="ad2">
+                <p>ad 2</p>
+            </div>
+            {% elif forloop.counter == 4 %}
+
+            {% elif forloop.counter == 5 %}
+            <div class="ad3">
+                <p>ad 3</p>
+            </div>
+            {% elif forloop.counter == 3 %}
+            <div></div>
+        <!-- Code for Ad 3 -->
+            {% endif %}
+        {% endfor %}
+        </div>
+        
+
+    </div>
+    
+   
+    
+{% include 'footer.html' %}
+</body>
+</html>
+

@@ -1,0 +1,158 @@
+.ad{
+    position: absolute;
+    top: 400%;
+    font-size: 100px;
+    left: 8%;
+    
+    width: 10%;
+    
+}
+.ad2{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    font-size: 100px;  
+}
+.ad3{
+    position: absolute;
+    top: 700%;
+    left: 85%;
+    font-size: 100px;  
+}
+
+.grid-nutrient{
+    font-size: 22px;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: auto auto auto auto;
+background-color: #feffff;
+padding: 10px;
+
+}
+.grid-item {
+background-color: rgba(255, 255, 255, 0.8);
+border: 1px solid rgba(0, 0, 0, 0.8);
+padding: 10px;
+font-size: 20px;
+
+text-align: center;
+}
+h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.head{
+    font-size: 400%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 25px;
+}
+.img1{
+    width: 700px;
+    padding-bottom: 12px;
+  
+}
+img{
+    width: 100%;
+}
+
+.margin{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .ad{
+        position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    
+    
+}
+.ad2{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    
+}
+.ad3{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+     
+}
+.margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.head{
+    font-size: 300%;
+}
+}
+@media only screen and (max-width: 480px) {
+    .ad{
+        position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    
+    
+}
+.ad2{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    
+}
+.ad3{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+     
+}
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 140px 200px 200px 200px;
+        width: 100%;
+        overflow-x: scroll;
+        
+        
+        
+
+}
+    .margin{
+    margin-left: 5px;
+    margin-right: 5px;
+} 
+.img1{
+    width: 100%;
+    
+  
+}
+.head{
+    font-size: 300%;
+}
+.grid-item {
+
+
+padding: 4px;
+font-size: 15px;
+
+text-align: center;
+}
+.grid-nutrient{
+font-size: 16px;
+}
+
+}

@@ -14,3 +14,52 @@ class Scent(models.Model):
 
 def formatted_description(self):
         return self.description.replace('\n', '<br>')
+
+
+
+
+class Comparison(models.Model):
+    comp_name = models.CharField(max_length=200, null=True)
+    comp_url = models.URLField(max_length=500, null=True)
+    comp_img = models.ImageField(upload_to='images/', null=True)
+
+    comp_price_index = models.CharField(blank=True, max_length=100)
+
+class BasketballEssential(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/')
+    coupons = models.CharField(max_length=200, blank=True)
+    benefits = models.CharField(max_length=400, blank=True)
+    stars = models.DecimalField(blank=True, max_digits=3, decimal_places=2)
+    brand = models.CharField(max_length=200, blank=True)
+    material = models.CharField(max_length=200, blank=True)
+    url = models.URLField(max_length=200)
+    sale = models.CharField(max_length=100, blank=True)
+    genre = models.CharField(max_length=300, blank=True)
+
+    comparison = models.ManyToManyField(Comparison, blank=True)
+
+
+
+
+
+    def formatted_description(self):
+        return self.description.replace('\n', '<br>')
+
+
+    def __str__(self):
+        return self.name
+
+
+class Watch(models.Model):
+     Name_player = models.CharField(max_length=400, blank=True)
+     name_watch = models.CharField(max_length=400, blank=True)
+     img_watch = models.ImageField(upload_to='images/', null=True)
+     img_player = models.ImageField(upload_to='images/', null=True)
+     description = models.TextField(max_length=10000, blank=True)
+
+
+
+def formatted_description(self):
+    return self.description.replace('\n', '<br>')

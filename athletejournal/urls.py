@@ -22,5 +22,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('', views.home, name='home'),
+    path('basketball-essentials/', views.essentials, name='basketball-essentials'),
+    path('nba-players-cologne-choices/', views.cologne, name='nba-players-cologne-choices'),
+    path('preventing-injury/', views.injury, name='preventing-injury'),
+    path('nba-watch-picks/', views.watch, name='nba-watch-picks'),
+    path('the-game-changers/', views.gamechanger, name='the-game-changers'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,66 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akatab&family=Modak&family=Noto+Sans:wght@100&family=Oswald:wght@700&family=Playfair+Display&family=Ysabeau+SC:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+<body>
+  
+    <div class="nav-top">
+        
+        <p class="nav-header">Basketball&More</p>
+        <div class="nav-info">
+            
+            <a href="{% url 'home' %}" style="color: aliceblue; text-decoration: none;">Home</a>
+            <a href="{% url 'basketball-essentials' %}" style="color: aliceblue; text-decoration: none;">Basketball Essentials</a>
+            <a href="{% url 'nba-players-cologne-choices' %}" style="color: aliceblue; text-decoration: none;">NBA Colognes</a>
+            <a href="{% url 'preventing-injury' %}" style="color: aliceblue; text-decoration: none;"">Preventing Injury</a>
+            <a href="{% url 'nba-watch-picks' %}" style="color: aliceblue; text-decoration: none;"">NBA Watches</a>
+            <a href="{% url 'the-game-changers' %}" style="color: aliceblue; text-decoration: none;"">The GameChangers</a>
+            
+        </div>
+        <div>
+            <div class="bars">
+                <div class="dropdown">
+                
+                    <a aria-expanded="false" data-bs-toggle="dropdown" style="color: rgb(255, 254, 254); font-size: 30px;" class="navbar-toggle" href="#"><i class="fas fa-bars"></i></a>
+                    
+                    <ul class="dropdown-menu">
+                       
+                        <a class="dropdown-item" href="{% url 'basketball-essentials' %}" style="color: rgb(0, 0, 0); text-decoration: none;">Basketball Essentials</a>
+
+                        
+                        <a class="dropdown-item" href="{% url 'nba-players-cologne-choices' %}" style="color: rgb(0, 0, 0); text-decoration: none;">NBA Colognes</a>
+                       
+                        <a class="dropdown-item" href="{% url 'nba-watch-picks' %}" style="color: rgb(0, 0, 0); text-decoration: none;"">NBA watches</a>
+                        
+                        
+                        <a class="dropdown-item" href="{% url 'the-game-changers' %}" style="color: rgb(0, 0, 0); text-decoration: none;"">The Game Changers</a>
+
+                        <a class="dropdown-item" href="{% url 'preventing-injury' %}" style="color: rgb(0, 0, 0); text-decoration: none;">Preventing Injury</a>
+
+                       
+                        <a class="dropdown-item" href="{% url 'home' %}" style="color: rgb(0, 0, 0); text-decoration: none;">Home</a>
+                        
+                    </ul>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <!-- Example using Font Awesome -->
+    
+    <!-- Example using Font Awesome -->
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+</body>
+

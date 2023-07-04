@@ -1,0 +1,203 @@
+.ad{
+    position: absolute;
+    top: 250%;
+    font-size: 100px;
+    left: 8%;
+    
+    width: 10%;
+    
+}
+.ad2{
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    font-size: 100px;  
+}
+.ad3{
+    position: absolute;
+    top: 380%;
+    left: 85%;
+    font-size: 100px;  
+}
+
+.header{
+    display: inline-block;
+}
+
+
+.margin{
+    margin-left: 25%;
+margin-right: 25%;
+}
+
+
+.top-head{
+font-size: 500%;
+color: black;
+padding-bottom: 5%;
+
+
+}
+.table-of-contents{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 20px;
+color: rgb(156, 16, 16);
+
+
+}
+html{
+scroll-behavior: smooth;
+}
+.question{
+font-size: 25px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+padding-top: 20px;
+}
+.name{
+color: black;
+font-size: 120%;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.header{
+font-size: 250%;
+color: black;
+scroll-behavior: smooth;
+border: 2px solid black;
+display: inline-block;
+padding: 10px;
+    
+}
+
+.description{
+font-size: 110%;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.images{
+height: 340px;
+}
+
+.grid-photo{
+display: flex;
+}
+
+
+img{
+
+height: 100%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+.phone-pad{
+margin-left: 7px;
+margin-right: 7px;
+}
+.ad{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    text-align: center;
+    
+}
+.ad2{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+    text-align: center;
+}
+.ad3{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+    text-align: center;
+}
+.table-of-contents{
+
+font-size: 30px;
+
+
+
+}
+.margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.images{
+max-width: 100%;
+height: auto;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.phone-pad{
+margin-left: 7px;
+margin-right: 7px;
+}
+.ad{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%;
+    text-align: center;
+    
+}
+.ad2{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+    text-align: center;
+}
+.ad3{
+    position: static;
+    top: 530px;
+    font-size: 100px;
+    
+    width: 10%; 
+    text-align: center;
+}
+
+.margin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.top-head{
+    font-size: 300%;
+
+
+
+}
+.header{
+font-size: 150%;
+color: black;
+scroll-behavior: smooth;
+border: 2px solid black;
+display: inline-block;
+padding: 10px;
+margin-right: 15px;
+    
+}
+.images{
+max-width: 100%;
+height: auto;
+}
+.navbar{
+background-color: antiquewhite;
+bottom: 0;
+height: 400px;
+
+}
+.top-head{
+font-size: 300%;
+
+
+
+}
+}

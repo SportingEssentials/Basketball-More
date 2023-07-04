@@ -1,0 +1,113 @@
+{% load static %}
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the captivating world of NBA players' cologne selections. Discover the signature scents and preferred fragrances of basketball icons, unveiling a captivating blend of style, elegance, and personal expression. Find inspiration for your own cologne journey as you delve into the intriguing world where sports and fragrances converge">
+    <title>Signature Scents of NBA Players: Colognes of Lebron James, Kyrie Irving, Dwight Howard, Pascal Siakam and many more</title>
+    <link rel="stylesheet" href="{% static 'css/cologne.css' %}">
+   
+
+
+</head>
+
+<body>
+    
+    <div class="margin">
+        <h1 class="top-head">Welcome to NBA Player Colognes: Discover the Signature Scents of Your Favorite Players</h1>
+        
+        {% for scent in scents %}
+            <a class="table-of-contents" style="text-decoration: none;" href="#scent{{ forloop.counter }}"> - {{ scent.header }}</a>
+            <br> 
+           
+        {% endfor %}
+    
+        <div class="info">
+            <div class="grid">
+                <div class="phone-pad">
+                    {% for scent in scents %}
+                <p style="padding-top: 70px;"></p>
+            <p id="scent{{ forloop.counter }}" class="header"  style="text-decoration: none;" href="{{ scent.colonge_url }}">{{ scent.header }}</p>
+            
+            <div>
+                <img class="images" class="images" src="{{ scent.player_image.url }}" alt="Player Image">
+    
+    
+            </div>
+            <p class="question">Why does {{ scent.player_name}} use this scent?</p>
+            <div class="description">
+                <p >{{ scent.why|linebreaks|safe }}</p>
+            </div>
+            {% if scent.application %}
+                <p class="question">How does {{ scent.player_name }} apply his scent</p>
+            {% endif %}
+            <div class="description">
+                <p >{{ scent.application|linebreaks|safe }}</p>
+            </div>
+            <div class="grid-photo">
+                <div>
+    
+    
+                    <p class="name" style="text-decoration: none; float: left;" >- Look at {{ scent.colonge_name }}</p>
+                    <br>
+                    <a style="text-decoration: none; display: inline-block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 350px;
+                    color: black;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-size: 20px;
+                   " href="{{ scent.colonge_url }}">{{ scent.colonge_url }}</a>
+                </div>
+    
+            </div>
+    
+    
+    
+    
+            {% if forloop.counter == 1 %}
+            <div class="ad">
+                <p>ad 1</p>
+            </div>
+        <!-- Code for Ad 1 -->
+            {% elif forloop.counter == 2 %}
+            
+        <!-- Code for Ad 2 -->
+            {% elif forloop.counter == 3 %}
+            <div class="ad2">
+                <p>ad 2</p>
+            </div>
+            {% elif forloop.counter == 4 %}
+
+            {% elif forloop.counter == 5 %}
+            <div class="ad3">
+                <p>ad 3</p>
+            </div>
+            {% elif forloop.counter == 6 %}
+            <div></div>
+        <!-- Code for Ad 3 -->
+            {% endif %}
+            {% endfor %}
+                </div>
+            
+            </div>
+    
+        </div>
+    
+       
+    
+    </div>
+   
+    
+    
+{% include 'footer.html' %}
+</body>
+</html>
+
+
+
