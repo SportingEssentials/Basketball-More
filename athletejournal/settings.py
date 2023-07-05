@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'athletejournalapp'
+    
+    'athletejournalapp',
+
+
 ]
 
 MIDDLEWARE = [
@@ -50,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
    
 ]
 
@@ -78,11 +82,22 @@ WSGI_APPLICATION = 'athletejournal.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+   }
 }
+
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'django.db.backends.mysql',
+ #       'NAME': 'BasketballAndMor$default',
+ #       'USER': 'BasketballAndMor',
+ #       'PASSWORD': 'Geyerwally12345',
+ #       'HOST': 'BasketballAndMore.mysql.pythonanywhere-services.com',
+ #       'PORT': '3306',
+#    }
+#}
 
 
 # Password validation

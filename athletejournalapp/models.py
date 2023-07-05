@@ -18,12 +18,7 @@ def formatted_description(self):
 
 
 
-class Comparison(models.Model):
-    comp_name = models.CharField(max_length=200, null=True)
-    comp_url = models.URLField(max_length=500, null=True)
-    comp_img = models.ImageField(upload_to='images/', null=True)
 
-    comp_price_index = models.CharField(blank=True, max_length=100)
 
 class BasketballEssential(models.Model):
     name = models.CharField(max_length=200)
@@ -38,7 +33,7 @@ class BasketballEssential(models.Model):
     sale = models.CharField(max_length=100, blank=True)
     genre = models.CharField(max_length=300, blank=True)
 
-    comparison = models.ManyToManyField(Comparison, blank=True)
+
 
 
 
