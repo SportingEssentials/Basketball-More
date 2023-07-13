@@ -1,0 +1,114 @@
+
+ 
+
+
+
+   
+
+  <div class="piechart">
+    {% if data.threepoint and data.three_missed_data %}
+    <div class="indipie">
+      <canvas class="chart" id="fgStatsChart"></canvas>
+    </div>
+    {% endif %}
+    
+    {% if data.fieldmakes and data.fga %}
+      <div class="indipie">
+        <canvas class="chart" id="fgStatsChart2"></canvas>
+      </div>
+    {% endif %}
+  </div>
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var fgStatsData = {
+      labels: ['3PT Made', '3PT Missed'],
+      datasets: [
+        {
+          label: 'Field Goal Stats',
+          data: [
+           
+            {{ data.threepoint }},
+           
+            {{ data.three_missed_data }},
+          ],
+          backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'],
+          borderColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'],
+          borderWidth: 1
+        }
+      ]
+    };
+
+    var fgStatsOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    };
+
+    var fgStatsCtx = document.getElementById('fgStatsChart').getContext('2d');
+    new Chart(fgStatsCtx, {
+      type: 'pie',
+      data: fgStatsData,
+      options: fgStatsOptions,
+      responsive: true,
+      maintainAspectRatio: false,
+      aspectRatio: 1,
+    });
+  });
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var fgStatsData = {
+      labels: ['FG Made', 'FG Missed'],
+      datasets: [
+        {
+          label: 'Field Goal Stats',
+          data: [
+           
+        
+            {{ data.fieldmakes }},
+           
+            {{ data.fg_missed_data }},
+          ],
+          backgroundColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'],
+          borderColor: ['rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'],
+          borderWidth: 1
+        }
+      ]
+    };
+
+    var fgStatsOptions = {
+      
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    };
+
+    var fgStatsCtx = document.getElementById('fgStatsChart2').getContext('2d');
+    new Chart(fgStatsCtx, {
+      type: 'pie',
+      data: fgStatsData,
+      options: fgStatsOptions,
+      responsive: true,
+      maintainAspectRatio: false,
+      aspectRatio: 1,
+    });
+  });
+
+
+
+ 
+</script>
+
+

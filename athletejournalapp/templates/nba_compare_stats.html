@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NBA Player Stats Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h3>Compare Your Stats to Lebron, Micheal, Wilt, Steph and More</h3>
+  <canvas id="statsChart"></canvas>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var ctx = document.getElementById('statsChart').getContext('2d');
+      
+      var userStats = {
+        label: 'Your Stats',
+        data: [{{ data.points }}, {{ data.rebounds }}, {{ data.assists }},   {{ data.shot_percent }}, {{ data.threepercent }}, {{ data.ft_percent }}],
+        backgroundColor: 'rgba(10, 0, 300, 1)', 
+        borderColor: 'rgba(10, 0, 300, 1)', 
+        borderWidth: 1
+      };
+
+      var stephCurry = {
+        label: 'Stephen Curry MVP 2015-16 season',
+        data: [30.1, 5.4, 6.7,   50.4, 45.4, 93],
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      };
+
+      var lebronJames = {
+        label: 'LeBron James 2009-2009 MVP',
+        data: [29.7, 7.3, 8.6,  50.3, 33.3, 76.7],
+        backgroundColor: 'rgba(255, 206, 86, 0.5)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1
+      };
+
+      var nikolaJokic = {
+        label: 'Nikola Jokic 2022-23 Season',
+        data: [24.5, 11.8, 9.8,   63.2, 38.3, 82.2],
+        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      };
+
+      var jamesHarden = {
+        label: 'James Harden rockets 2018-19 Season',
+        data: [36.1, 6.6, 7.5,  44.2, 36.8	, 87.9],
+        backgroundColor: 'rgba(153, 102, 255, 0.5)',
+        borderColor: 'rgba(153, 102, 255, 1)',
+        borderWidth: 1
+      };
+
+      var micheal = {
+        label: 'Micheal Jordan 1995-1996 Season',
+        data: [30.4, 6.6, 4.3,  49.5, 42.7, 83.4],
+        backgroundColor: 'rgba(153, 32, 255, 0.5)',
+        borderColor: 'rgba(153, 32, 255, 1)',
+        borderWidth: 1
+      };
+
+      var wilt = {
+        label: 'Wilt Chamberlain 1961-62 NBA season',
+        data: [50.4, 25.7, 2.4,  50.6, 42.7, 61.3	],
+        backgroundColor: 'rgba(53, 92, 25, 0.5)',
+        borderColor: 'rgba(53, 92, 25, 1)',
+        borderWidth: 1
+      };
+
+      var data = {
+        labels: ['PPG', 'RPG', 'APG',   'FG%', '3P%', 'FT%'],
+        datasets: [userStats, stephCurry, lebronJames, nikolaJokic, jamesHarden, micheal, wilt]
+      };
+
+      var options = {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      };
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: options
+      });
+    });
+  </script>
+</body>
+</html>

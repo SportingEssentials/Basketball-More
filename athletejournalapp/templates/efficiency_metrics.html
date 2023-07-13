@@ -1,0 +1,28 @@
+<!-- efficiency_metrics.html -->
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/efficiency.css' %}">
+</head>
+<h3>Efficiency Metrics:</h3>
+<table>
+  
+  <tr>
+    <p class="important">True Shooting Percentage (TS%): <span>{% if data.ts_percent %}{{ data.ts_percent }}%{% else %}Insufficient Data{% endif %}</span></p>
+    <div class="info-metrics">
+      <p>True Shooting Percentage (TS%) is a basketball statistic that measures a player's shooting efficiency by taking into account their field goals, three-point field goals, and free throws. It provides a more accurate representation of a player's scoring efficiency than field goal percentage alone.</p>
+      <p> A good TS% is around 50%, scores over 60% are exceptional. The highest TS% in the league is held by Jarrett Allen with 71.9% </p>
+    </div>
+    
+  </tr>
+ 
+  <tr>
+    <p class="important">Effective Field Goal Percentage (eFG%): <span>{% if data.efg_percent %}{{ data.efg_percent }}%{% else %}Insufficient Data{% endif %}</span></p>
+    <div class="info-metrics">
+      <p>Effective Field Goal Percentage (eFG%) is a basketball statistic that measures a player's shooting efficiency by adjusting for the added value of three-point field goals. It takes into account the fact that three-point shots are worth more points than two-point shots.</p>
+      <p>An eFG% of 50% or higher is good. DeAndre Jordan has the highest eFG% in the league at 67%.</p>
+    </div>
+    
+   
+
+</table>
+

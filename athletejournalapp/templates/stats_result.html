@@ -1,0 +1,182 @@
+<!-- stats_result.html -->
+{% load static %}
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Analysis: The Ultimate Stat Analysis for Basketball, with Infograms, Improvements, Advanced Metrics, and Comparisons</title>
+  <meta name="description" content="This analysis allows basketball players to get an in-depth look of their game. With advanced metrics such as eFG and TS%, as well as charts and comparisons, becoming a better player has never been easier. Pinpoint areas that need improvement, compare yourself to the likes of NBA stars, and get closer to reaching your basketball goals.  ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akatab&family=Modak&family=Noto+Sans&family=Noto+Serif+Makasar&family=Oswald:wght@300;700&family=Playfair+Display&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/6150ded825.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/stats_result.css' %}">
+<script src="{% static 'java/stats_result.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+
+</head>
+<body>
+    <div class="margin">
+      <h1 style="padding-bottom: 4%;">Your In-depth Player Analysis</h1>
+     
+      
+          <div class="your-stats">
+            
+            <p><span style="font-weight: bold;">Points</span> (PPG): {{ data.points }}</p>
+            <p><span style="font-weight: bold;">Assists</span> (APG): {{ data.assists }}</p>
+            <p><span style="font-weight: bold;">Steals</span> (SPG): {{ data.steals }}</p>
+            <p><span style="font-weight: bold;">Blocks</span> (BPG): {{ data.blocks }}</p>
+            <p><span style="font-weight: bold;">Rebounds</span> (RBG): {{ data.rebounds }}</p>
+
+            {% if data.shot_percent == 'null' %}
+            {% else %}
+             <p><span style="font-weight: bold;">Field Goal Percentage</span> (FG%): {{ data.shot_percent }}%</p>
+            {% endif %}
+            {% if data.ft_percent == 'null' %}
+            {% else %}
+              <p><span style="font-weight: bold;">FT Percentage </span>(FT%): {{ data.ft_percent }}%</p>
+            {% endif %}
+            {% if data.fieldmakes %}
+            <p><span style="font-weight: bold;">Field Goals</span> (FGM/FGA): {{ data.fieldmakes }} / {{ data.fga }}</p>
+            {% endif %}
+            {% if data.threepoint %}
+            <p><span style="font-weight: bold;">Three Point Makes</span> (3PT): {{ data.threepoint }}</p>
+            {% endif %}
+            {% if data.threepercent == 'null' %}
+            {% else %}
+              <p><span style="font-weight: bold;">Three Point Percent</span> (3P%): {{ data.threepercent }}%</p>
+            {% endif %}
+
+            {% if data.turnover == 'null' %}
+  <!-- If turnover is empty, do not display the label and value -->
+            {% else %}
+              <p><span style="font-weight: bold;">Turnovers</span> (TPG): {{ data.turnover }}</p>
+            {% endif %}
+
+          </div>
+          
+          <div class="stat-chart">
+            <canvas id="barChart"></canvas>
+            {% include 'pie_chart.html' %}
+            
+          </div>
+         
+
+         <div class="improvements">
+          {% if data.strengths or data.weaknesses %}
+          <h3 >
+            Strengths, Weaknesses, and Improvements:
+          </h3>
+        {% if data.strengths %}
+        <div class="strength">
+          <p style="font-family: 'Open Sans', sans-serif;">
+            
+              <strong>Strengths:</strong> {{ data.strengths|join:", " }}.
+          </p >
+        {% endif %}
+        {% if data.weaknesses %}
+          <p style="font-family: 'Open Sans', sans-serif;">
+            <strong>Weaknesses:</strong> {{ data.weaknesses|join:", " }}.
+          
+         
+          </p>
+        </div>
+        {% endif %}
+        <p>
+          To further develop your skills and maximize your potential, consider the following areas of improvement:
+        </p>
+        <ul>
+        {% if 'Scoring' in data.weaknesses %}
+          <li>Become a more versitile scorer: Instead of relying on one area of skill, work on other ways to score. This could mean drives to the basket, the three ball, or incorporating a midrange game. Having multiple ways to attack can make the difference when it comes to scoring. Practicing your go-to moves and perfecting them will also help you score more points. Learn more about scoring by visiting <a href="https://www.youtube.com/watch?v=M-MMg5M9QHk">https://www.youtube.com</a>. <br> <br></li>
+        {% endif %}
+        {% if 'Playmaking' in data.weaknesses %}
+          <li>Look to increase your assists. currently you have {{ data.assists }} which is on the low side of an average basketball player. Focus on court vision and decision-making to enhance your playmaking abilities. Try looking up while dribbling the ball; this will open up opportunities for passes. Learn to decide where to pass before the play even happens. Learning to pass hard and fast is also a good practice to have more assists. For more tips on assisting consider this article: <a href="https://ballercoach.com/training-guides/how-to-improve-passing-in-basketball/">https://ballercoach.com/training-guides/</a>. <br><br></li>
+        {% endif %}
+        {% if 'Steals' in data.weaknesses %}
+          <li>Practice defensive positioning and anticipation to increase your steals. Make the player your guarding as uncomfortable as possible as this will lead to the person making mistakes in their dribbling. Get low on the ground and have active hands so the second the offense slips up you can steal the ball. <br> <br></li>
+        {% endif %}
+        {% if 'Blocks' in data.weaknesses %}
+          <li>Improve your timing and positioning to increase your blocks. Dont try to swing at the ball because it may be called a foul, instead jump vertically and with the right timing you can block the ball. Focus on footwork as well, having the right lift off can improve the chances of a block. To gain a more in-depth understanding of blocking consider this video <a href="https://www.youtube.com/watch?v=r7_mbSROSN8">https://www.youtube.com/watch</a>. <br> <br></li>
+        {% endif %}
+        {% if 'Rebounding' in data.weaknesses %}
+          <li>Engage in strength and conditioning training to improve your rebounding abilities. For rebounding, taking authority in the paint is essential. the minute the ball is flying in the air, box out your man. Although the duty of rebounding is generally put on the center, boxing out is a team effort. to learn more about the skill of rebounding consider this source: <a href="https://www.youtube.com/watch?v=7uQfJEv6-IA">https://www.youtube.com</a>. <br> <br></li>
+        {% endif %}
+        {% if data.ft_percent %}
+          {% if 'Free Throw Percentage' in data.weaknesses %}
+            <li>A free throw percentage of {{ data.ft_percent }}% is something you can to improve. Work on technique and keeping your form the same every free throw. Implementing a precedure before shooting can also be beneficial. this could be bouncing the ball three times before shooting or really anything you want, just make sure it is the same every time. <br><br></li>
+          {% endif %}
+        {% endif %}
+        {% if 'Turnovers' in data.weaknesses %}
+          <li>You have {{ data.turnover }} turnovers. This can diminish your value as a player and result in a loss of playing time. Reduce turnovers by being more carefull with the ball. dont do moves you havent practiced yet, make sure your passes are hard and will get to the player, and handle the ball with care. <br></li>
+        {% endif %}
+        </ul>
+      
+        <p>
+         Remember, consistent practice and dedication are key to reaching your goals. Analyze your game, seek feedback from coaches or mentors, and strive for continuous improvement.
+        </p>
+        {% else %}
+          <p>No strengths or weaknesses found. Keep working hard to improve your game!</p>
+        {% endif %}
+         </div>
+
+         
+      
+          
+    
+         
+          <div class="improvements">
+            {% include 'efficiency_metrics.html' %}
+          </div>
+          
+          <div class="charts">
+            {% include 'compare-stats.html' %}
+            {% include 'nba_compare_stats.html' %}
+          </div>
+        <h3 style="padding-top: 3%;">Conclusion</h3>
+        <p>Congratulations on completing this comprehensive player analysis! Armed with valuable insights into your strengths, weaknesses, and areas for improvement, you are hopefully well-equipped to enhance your basketball skills.</p>
+        <p>Remember, consistent practice, dedication, and a passion for the game are key to reaching your full potential. Embrace the challenge, set ambitious goals, and keep pushing yourself to excel on the court. Good luck on your basketball journey!</p>
+        <p style="text-align: center; font-size: medium; color: rgb(219, 129, 129);">Share This Page With Friends  <span style="font-size: 25px;"><i class="fas fa-copy" onclick="copyToClipboard('basketball-more.com/game-stats-analysis/')"></i></span>  </p>
+       
+        
+
+    </div> 
+    
+{% include 'footer.html' %}
+</body>
+</html>
+<div>
+
+
+  
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  var ctx = document.getElementById('barChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Points', 'Assists', 'Steals', 'Blocks', 'Rebounds'],
+      datasets: [{
+        label: 'Your Stats',
+        data: [{{ data.points }}, {{ data.assists }}, {{ data.steals }}, {{ data.blocks }}, {{ data.rebounds }}],
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgba(100, 100, 100, 0.8)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+});
+</script>
+  

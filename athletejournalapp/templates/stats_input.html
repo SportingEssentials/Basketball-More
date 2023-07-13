@@ -1,0 +1,133 @@
+<!-- stats_input.html -->
+<!-- stats_input.html -->
+{% include 'navbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Analysis: The Ultimate Stat Analysis for Basketball, with Infograms, Improvements, Advanced Metrics, and Comparisons</title>
+  <meta name="description" content="This Analysis allows basketball players to get an in-depth look of their game. With advanced metrics such as eFG and TS%, as well as charts and comparisons, becoming a better player has never been easier. Pinpoint areas that need improvement, compare yourself to the likes of NBA stars, and get closer to reaching your basketball goals.  ">
+  <link rel="stylesheet" href="{% static 'css/stats_input.css' %}">
+    
+</head>
+<body>
+    <div class="margin">
+
+        <h1>Player Analysis: Discover Improvements, Tips, Infograms, Advanced Stats, NBA Comparisons and More</h1>
+
+        
+
+        <p style="padding-bottom: 3%;">Leaving blanks will impact user experience</p>
+        <div class="flex">
+            <div class="stats">
+                <form method="post" action="{% url 'stats_input' %}">
+                  {% csrf_token %}
+                  
+                  
+                      <div>
+                          <label for="points">Points (Req):</label>
+                          <input type="number" name="points" step="0.01" placeholder="PPG" max="100" required>
+                      </div>
+                      
+                      <div>
+                          <label for="rebounds">Rebounds (Req):</label>
+                          <input type="number" name="rebounds" step="0.1" placeholder="RPG" max="100" required>
+                      </div>
+                    
+                      <div>
+                          <label for="assists">Assists (Req):</label>
+                          <input type="number" name="assists" step="0.1" placeholder="APG"  max="100" required>
+                      </div>
+                    
+                      
+                     
+                      
+                      <div>
+                          <label for="steals">Steals (Req):</label>
+                          <input type="number" name="steals" step="0.1" placeholder="SPG" max="100" required>
+                      </div>
+                       
+                     
+                      
+                      
+                      <div>
+                          <label for="blocks">Blocks (Req):</label>
+                          <input type="number" name="blocks" step="0.1" placeholder="BPG" max="100" required>
+                      </div>
+                      
+                    
+                      
+                     <div>
+                      <label for="fieldmakes">Field Goal Makes:</label>
+                      <input type="number" name="fieldmakes" id="fieldmakes" step="0.1" max="100" placeholder="FGM">
+                     </div>
+                 
+                
+                 
+                 
+                      <div>
+                          <label for="fga">Field Goal Attempts:</label>
+                          <input type="number" name="fga" id="fga" step="0.1" max="100" placeholder="FGA">
+                         </div>
+                          
+                        
+                         <div>
+                          <label for="shot_percent">Field Goal Percentage:</label>
+                          <input type="number" name="shot_percent" step="0.1" max="100" placeholder="FG%">
+                         </div>
+              
+                         
+                          <div>
+                              <label for="fta">Free Throw Attempts:</label>
+                          <input type="number" name="fta" id="fta" step="0.1" max="100" placeholder="FTA">
+                          </div>
+                          
+                          <div>
+                              <label for="ft_percent">Free Throw Percentage:</label>
+                          <input type="number" name="ft_percent" step="0.1" max="100" placeholder="FT%">
+                          </div>  
+                          
+                         
+                          
+                          
+                         <div>
+                          <label for="threepercent">Three Point Percentage:</label>
+                          <input type="number" name="threepercent" step="0.1" max="100" placeholder="3P%">
+                         </div>
+                         
+                          <div>
+                              <label for="threepoint">Three Point Makes:</label>
+                          <input type="number" name="threepoint" id="threepoint" max="100" step="0.1" placeholder="3PM">
+                          </div>
+                         
+                          <div>
+                              
+                          <label for="turnover">Turnovers:</label>
+                          <input type="number" name="turnover" step="0.1" max="100" placeholder="TO">
+                          </div>
+                  
+      
+                
+                  
+      
+      
+                 
+                  <button style="color: rgb(0, 0, 0); background-color: rgb(82, 228, 49); opacity: 0.7; margin-right: 15%; margin-top: 1%; " type="submit">Submit</button>
+              
+                </form>
+              </div>
+              <img class="img" src="{% static 'images/mj.webp' %}" alt="">
+        </div>
+       
+       
+    
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
+
+
+
+  

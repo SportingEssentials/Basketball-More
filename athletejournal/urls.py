@@ -28,4 +28,6 @@ urlpatterns = [
     path('preventing-injury/', views.injury, name='preventing-injury'),
     path('nba-watch-picks/', views.watch, name='nba-watch-picks'),
     path('the-game-changers/', views.gamechanger, name='the-game-changers'),
+    path('game-analysis', views.game, name='game-analysis'),
+    path('game-stats-analysis/', views.stats_input, name='stats_input'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

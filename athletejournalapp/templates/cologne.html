@@ -31,7 +31,7 @@
                 <div class="phone-pad">
                     {% for scent in scents %}
                 <p style="padding-top: 70px;"></p>
-            <p id="scent{{ forloop.counter }}" class="header"  style="text-decoration: none;" href="{{ scent.colonge_url }}">{{ scent.header }}</p>
+            <h1 id="scent{{ forloop.counter }}" class="header"  style="text-decoration: none;" href="{{ scent.colonge_url }}">{{ scent.header }}</h1>
             
             <div>
                 <img class="images" class="images" src="{{ scent.player_image.url }}" alt="Player Image">
